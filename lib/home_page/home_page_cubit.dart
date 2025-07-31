@@ -7,4 +7,10 @@ class HomePageCubit extends Cubit<HomePageState>{
     emit(state.copyWith(name: name));
   }
 
+  changeName2({required String name}){
+    emit(state.copyWith(name: name));
+
+  }
+
+
 }

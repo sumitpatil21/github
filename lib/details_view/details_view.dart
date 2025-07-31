@@ -34,12 +34,20 @@ class _DetailsViewState extends State<DetailsView> {
       ),
       body: BlocBuilder<DetailsCubit, DetailsState>(
         builder: (context, state) {
-          return Center(
-            child: InkWell(
-                onTap: () {
-                  context.read<DetailsCubit>().setProductName(name: "Samsung S22 Ultra");
-                },
-                child: Text("Product Name : ${state.name}")),
+          return Column(
+            children: [
+              Center(
+                child: InkWell(
+                    onTap: () {
+                      context.read<DetailsCubit>().setProductName(name: "Samsung S22 Ultra");
+                    },
+                    child: Text("Product Name : ${state.name}")),
+              ),
+              ElevatedButton(onPressed: (){
+                Navigator.of(context).pop();
+              }, child: const Text("Back"))
+
+            ],
           );
         },
       ),
